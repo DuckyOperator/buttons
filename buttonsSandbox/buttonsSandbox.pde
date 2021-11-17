@@ -1,9 +1,9 @@
 //global variables
 float buttonX, buttonY, buttonWidth, buttonHeight;
-color buttonColour, yellow=#FFF064, purple=#683789 , white=#FFFFFF
+color buttonColour, blue=#0F146F, red=#8B1919, white=#FFFFFF, reset=white;
 
 void setup() {
-  size (displayWidth, displayHeight);
+  fullScreen ();
   //Population
   buttonX = displayWidth*1/4;
   buttonY = displayHeight*1/3;
@@ -13,18 +13,19 @@ void setup() {
 
 void draw() {
   background(white);
-  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+  //printin(mouseX, mouseY);
   if ( mouseX >= buttonX && mouseY >= buttonY && mouseX <= buttonX+buttonWidth && mouseY <= buttonY+buttonHeight ) {
-    buttonColour = yellow;
+    buttonColour = red;
   } else {
-    buttonColour = purple;
-  fill(buttonColour);
-  rect(buttonX, buttonY, buttonWidth, ButtonHeight);
-  fill(reset);}
+    buttonColour = blue;
+    fill(buttonColour);
+    rect(buttonX, buttonY, buttonWidth, buttonHeight);
+    fill(reset);
+  }
 }//End draw()
 
 void mousePressed() {
-  if (mouseX >= buttonX && mouseY >= buttonY && mouseX <= buttonX+buttonWidth && mouseY <= buttonY+ButtonHeight) exit();
+  if (mouseX >= buttonX && mouseY >= buttonY && mouseX <= buttonX+buttonWidth && mouseY <= buttonY+buttonHeight) exit();
 }//End mousePressed()
 
 void keyPressed() {
